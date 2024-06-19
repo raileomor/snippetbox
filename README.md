@@ -3,6 +3,9 @@
 ```bash
 $ go run ./cmd/web
 $ go run ./cmd/web >>/tmp/web.log
+
+$ docker compose up -d
+$ docker exec -it [container_name_or_id] mysql -u[username] -p
 ```
 
 Let's Go
@@ -27,3 +30,15 @@ Let's Go
 - Dependency injection
 - Centralized error handling
 - Isolating the application routes
+
+4. Database-driven responses
+
+- Setting up MySQL
+- Installing a database driver
+- Modules and reproducible builds
+- Creating a database connection pool
+- Designing a database model
+- Executing SQL statements
+- Single-record SQL queries
+- Multiple-record SQL queries
+- Transactions and other details
