@@ -42,3 +42,12 @@ Let's Go
 - Single-record SQL queries
 - Multiple-record SQL queries
 - Transactions and other details
+
+5. Dynamic HTML templates
+
+- Displaying dynamic data
+- Template actions and functions
+- Caching templates
+- Catching runtime errors
+- Common dynamic data
+- Custom template functions
