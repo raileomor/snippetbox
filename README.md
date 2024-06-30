@@ -59,3 +59,12 @@ Let's Go
 - Request logging
 - Panic recovery
 - Composable middleware chains
+
+7. Processing forms
+
+- Setting up an HTML form
+- Parsing form data
+- Validating form data
+- Displaying errors and repopulating fields
+- Creating validation helpers
+- Automatic form parsing
