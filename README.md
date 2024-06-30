@@ -51,3 +51,11 @@ Let's Go
 - Catching runtime errors
 - Common dynamic data
 - Custom template functions
+
+6. Middleware
+
+- How middleware works
+- Setting common headers
+- Request logging
+- Panic recovery
+- Composable middleware chains
