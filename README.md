@@ -68,3 +68,9 @@ Let's Go
 - Displaying errors and repopulating fields
 - Creating validation helpers
 - Automatic form parsing
+
+8. Stateful HTTP
+
+- Choosing a session manager
+- Setting up the session manager
+- Working with session data
