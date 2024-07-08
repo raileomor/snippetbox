@@ -6,6 +6,10 @@ $ go run ./cmd/web >>/tmp/web.log
 
 $ docker compose up -d
 $ docker exec -it [container_name_or_id] mysql -u[username] -p
+
+# You might want to consider using `mkcert` to generate the TLS certificates
+# it has the advantage that the generated certificates are locally trusted
+$ go run /usr/local/go/src/crypto/tls/generate_cert.go --rsa-bits=2048 --host=localhost
 ```
 
 Let's Go
@@ -74,3 +78,12 @@ Let's Go
 - Choosing a session manager
 - Setting up the session manager
 - Working with session data
+
+9. Server and security improvements
+
+- The http.Server struct
+- The server error log
+- Generating a self-signed TLS certificate
+- Running a HTTPS server
+- Configuring HTTPS settings
+- Connection timeouts
