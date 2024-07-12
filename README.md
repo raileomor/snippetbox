@@ -87,3 +87,13 @@ Let's Go
 - Running a HTTPS server
 - Configuring HTTPS settings
 - Connection timeouts
+
+10. User authentication
+
+- Routes setup
+- Creating a users model
+- User signup and password encryption
+- User login
+- User logout
+- User authorization
+- CSRF protection

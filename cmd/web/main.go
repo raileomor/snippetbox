@@ -23,6 +23,7 @@ import (
 type application struct {
 	logger         *slog.Logger
 	snippets       *models.SnippetModel
+	users          *models.UserModel
 	templateCache  map[string]*template.Template
 	formDecoder    *form.Decoder
 	sessionManager *scs.SessionManager
@@ -94,6 +95,7 @@ func main() {
 		logger:         logger,
 		snippets:       &models.SnippetModel{DB: db},
 		templateCache:  templateCache,
+		users:          &models.UserModel{DB: db},
 		formDecoder:    formDecoder,
 		sessionManager: sessionManager,
 	}
