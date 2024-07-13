@@ -97,3 +97,8 @@ Let's Go
 - User logout
 - User authorization
 - CSRF protection
+
+11. Using request context
+
+- How request context works
+- Request context for authentication/authorization
