@@ -38,6 +38,9 @@ func main() {
 	// Define a new command-line flag for the MySQL DSN string.
 	dsn := flag.String("dsn", "myuser:UserP@ssword!@/snippetbox?parseTime=true", "MySQL data source name")
 
+	// With docker use this DSN
+	// dsn := flag.String("dsn", "myuser:UserP@ssword!@tcp(db:3306)/snippetbox?parseTime=true", "MySQL data source name")
+
 	// Importantly, we use the flag.Parse() function to parse the command-line flag.
 	// This reads in the command-line flag value and assigns it to the addr
 	// variable. You need to call this *before* you use the addr variable

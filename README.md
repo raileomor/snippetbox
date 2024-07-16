@@ -10,6 +10,12 @@ $ docker exec -it [container_name_or_id] mysql -u[username] -p
 # You might want to consider using `mkcert` to generate the TLS certificates
 # it has the advantage that the generated certificates are locally trusted
 $ go run /usr/local/go/src/crypto/tls/generate_cert.go --rsa-bits=2048 --host=localhost
+
+# Testing embedding
+$ go build -o /tmp/web ./cmd/web/
+$ cp -r ./tls /tmp/
+$ cd /tmp/
+$ ./web
 ```
 
 Let's Go
@@ -102,3 +108,8 @@ Let's Go
 
 - How request context works
 - Request context for authentication/authorization
+
+12. File embedding
+
+- Embedding static files
+- Embedding HTML templates
