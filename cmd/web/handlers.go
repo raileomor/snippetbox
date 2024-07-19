@@ -11,6 +11,10 @@ import (
 	"github.com/raileomor/snippetbox/internal/validator"
 )
 
+func ping(w http.ResponseWriter, r *http.Request) {
+	w.Write([]byte("OK"))
+}
+
 // Change the signature of the home handler so it is defined as a method against
 // *application.
 func (app *application) home(w http.ResponseWriter, r *http.Request) {

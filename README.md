@@ -16,6 +16,36 @@ $ go build -o /tmp/web ./cmd/web/
 $ cp -r ./tls /tmp/
 $ cd /tmp/
 $ ./web
+
+# Testing
+$ go test -v ./cmd/web
+$ go test ./...
+$ go test -v -run="^TestPing$" ./cmd/web/
+$ go test -v -run="^TestHumanDate$/^UTC$" ./cmd/web
+$ go test -v -skip="^TestHumanDate$" ./cmd/web/
+$ go test -count=1 ./cmd/web # ignore caching
+$ go clean -testcache
+$ go test -failfast ./cmd/web # stop on first failure (others packages will continue)
+$ go test -parallel=4 ./... # by callying t.Parallel() in the test
+$ go test -race ./cmd/web/ # detect race conditions
+
+# Integration Testing (if you have mysql with docker replace localhost with '%')
+$ docker exec -it [container_name_or_id] mysql -u root -p
+mysql> CREATE DATABASE test_snippetbox CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+mysql> CREATE USER 'test_web'@'localhost';
+mysql> GRANT CREATE, DROP, ALTER, INDEX, SELECT, INSERT, UPDATE, DELETE ON test_snippetbox.* TO 'test_web'@'localhost';
+mysql> ALTER USER 'test_web'@'localhost' IDENTIFIED BY 'pass';
+$ go test -v -short ./... # for skipping long-running tests
+
+$ go test -cover ./...
+$ go test -coverprofile=/tmp/profile.out ./...
+$ go tool cover -func=/tmp/profile.out # view the coverage profile
+$ go tool cover -html=/tmp/profile.out # view the coverage profile in a browser
+
+# To count the number of times each statement is executed use -covermode=count
+# or -covermode=atomic if you run test in parallel
+$ go test -covermode=count -coverprofile=/tmp/profile.out ./...
+$ go tool cover -func=/tmp/profile.out
 ```
 
 Let's Go
@@ -113,3 +143,14 @@ Let's Go
 
 - Embedding static files
 - Embedding HTML templates
+
+13. Testing
+
+- Unit testing and sub-tests
+- Testing HTTP handlers and middleware
+- End-to-end testing
+- Customizing how tests run
+- Mocking dependencies
+- Testing HTML forms
+- Integration testing
+- Profiling test coverage

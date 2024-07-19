@@ -23,6 +23,9 @@ func (app *application) routes() http.Handler {
 	// file will be served (so long as it exists).
 	mux.Handle("GET /static/", http.FileServerFS(ui.Files))
 
+	// Add a new GET /ping route.
+	mux.HandleFunc("GET /ping", ping)
+
 	// Unprotected application routes using the "dynamic" middleware chain.
 
 	// Create a new middleware chain containing the middleware specific to our
