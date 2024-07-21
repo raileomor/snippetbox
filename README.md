@@ -162,3 +162,4 @@ Let's Go
 - Test the snippetCreate handler
 - Add an 'Account' page
 - Redirect user appropriately after login
+- Implementing a 'Change Password' feature
