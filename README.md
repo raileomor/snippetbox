@@ -161,3 +161,4 @@ Let's Go
 - Add a debug mode
 - Test the snippetCreate handler
 - Add an 'Account' page
+- Redirect user appropriately after login
