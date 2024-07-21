@@ -1,6 +1,8 @@
 package mocks
 
 import (
+	"time"
+
 	"github.com/raileomor/snippetbox/internal/models"
 )
 
@@ -13,6 +15,21 @@ func (m *UserModel) Insert(name, email, password string) error {
 	default:
 		return nil
 	}
+}
+
+func (m *UserModel) Get(id int) (models.User, error) {
+	if id == 1 {
+		u := models.User{
+			ID:      1,
+			Name:    "Alice",
+			Email:   "alice@example.com",
+			Created: time.Now(),
+		}
+
+		return u, nil
+	}
+
+	return models.User{}, models.ErrNoRecord
 }
 
 func (m *UserModel) Authenticate(email, password string) (int, error) {

@@ -160,3 +160,4 @@ Let's Go
 - Add an 'About' page to the application
 - Add a debug mode
 - Test the snippetCreate handler
+- Add an 'Account' page
