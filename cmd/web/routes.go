@@ -37,6 +37,8 @@ func (app *application) routes() http.Handler {
 	// method returns a http.Handler (rather than a http.HandlerFunc) we also
 	// need to switch to registering the route using the mux.Handle() method.
 	mux.Handle("GET /{$}", dynamic.ThenFunc(app.home))
+	// Add the about route.
+	mux.Handle("GET /about", dynamic.ThenFunc(app.about))
 	mux.Handle("GET /snippet/view/{id}", dynamic.ThenFunc(app.snippetView))
 	mux.Handle("GET /user/signup", dynamic.ThenFunc(app.userSignup))
 	mux.Handle("POST /user/signup", dynamic.ThenFunc(app.userSignupPost))

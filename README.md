@@ -154,3 +154,7 @@ Let's Go
 - Testing HTML forms
 - Integration testing
 - Profiling test coverage
+
+16. Guided exercises
+
+- Add an 'About' page to the application
