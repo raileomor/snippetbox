@@ -158,3 +158,4 @@ Let's Go
 16. Guided exercises
 
 - Add an 'About' page to the application
+- Add a debug mode

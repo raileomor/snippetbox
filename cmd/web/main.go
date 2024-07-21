@@ -21,6 +21,7 @@ import (
 // Define an application struct to hold the application-wide dependencies for the
 // web application.
 type application struct {
+	debug          bool
 	logger         *slog.Logger
 	snippets       models.SnippetModelInterface // Use our new interface type.
 	users          models.UserModelInterface    // Use our new interface type.
@@ -37,6 +38,9 @@ func main() {
 
 	// Define a new command-line flag for the MySQL DSN string.
 	dsn := flag.String("dsn", "myuser:UserP@ssword!@/snippetbox?parseTime=true", "MySQL data source name")
+
+	// Create a new debug flag with the default value of false.
+	debug := flag.Bool("debug", false, "Enable debug mode")
 
 	// With docker use this DSN
 	// dsn := flag.String("dsn", "myuser:UserP@ssword!@tcp(db:3306)/snippetbox?parseTime=true", "MySQL data source name")
@@ -95,6 +99,7 @@ func main() {
 	// Initialize a new instance of our application struct, containing the
 	// dependencies.
 	app := &application{
+		debug:          *debug, // Add the debug flag value to the application struct.
 		logger:         logger,
 		snippets:       &models.SnippetModel{DB: db},
 		templateCache:  templateCache,
